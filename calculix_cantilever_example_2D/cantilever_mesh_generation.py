@@ -30,14 +30,14 @@ modelSpace = predefined_spaces.StructuralMechanics3D(preprocessor.getNodeHandler
 # *********geometry*********
 points = preprocessor.getMultiBlockTopology.getPoints  # Point container.
 pt0 = points.newPntFromPos3d(geom.Pos3d(0.0,0.0,0.0)) 
-pt1 = points.newPntFromPos3d(geom.Pos3d(1.0,0.0,0.0)) 
-pt2 = points.newPntFromPos3d(geom.Pos3d(1.0,0.0,8.0)) 
+pt1 = points.newPntFromPos3d(geom.Pos3d(0.0,1.0,0.0)) 
+pt2 = points.newPntFromPos3d(geom.Pos3d(0.0,1.0,8.0)) 
 pt3 = points.newPntFromPos3d(geom.Pos3d(0.0,0.0,8.0))  # Right end
 
 surfaces = preprocessor.getMultiBlockTopology.getSurfaces  # Face container.
 surfaces.defaultTag = 1
 face0 = surfaces.newQuadSurfacePts(pt0.tag, pt1.tag, pt2.tag, pt3.tag)
-face0.setElemSizeIJ(0.5,0.25) #Element size in (pt0->pt1,pt1->pt2) directions 
+face0.setElemSizeIJ(0.2,0.2) #Element size in (pt0->pt1,pt1->pt2) directions 
 
 # Ascii art:
 #
